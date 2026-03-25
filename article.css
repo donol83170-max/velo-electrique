@@ -92,6 +92,7 @@
 .article-body p {
   margin-bottom: 16px;
   color: var(--text);
+  text-align: justify;
 }
 
 .article-body strong { color: var(--white); }
@@ -114,6 +115,7 @@
   color: var(--text);
   padding-left: 16px;
   position: relative;
+  text-align: justify;
 }
 
 .article-list li::before {
