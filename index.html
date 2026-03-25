@@ -1,212 +1,510 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VeloElite | Le Guide de Référence du Vélo Électrique Premium</title>
-    <meta name="description" content="Découvrez les meilleurs vélos électriques premium. Guide d'achat, comparatifs impartiaux et tests de performance pour vélotafeurs et cyclotouristes.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeloElite — Vélos Électriques Premium</title>
+  <meta name="description" content="Comparatifs, tests et guides d'achat pour vélos électriques haut de gamme. Trouvez le vélo électrique parfait en 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">Velo<span>Elite</span></div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#meilleurs">Meilleurs Vélos</a></li>
-                    <li><a href="#comparatifs">Comparatifs</a></li>
-                    <li><a href="#guides">Guides d'Achat</a></li>
-                    <li><a href="#promos" class="btn-secondary">Promos</a></li>
-                </ul>
-            </nav>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span>Velo<strong>Elite</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#selection">Sélection</a></li>
+        <li><a href="#comparatif">Comparatif</a></li>
+        <li><a href="#duel">Duel</a></li>
+        <li><a href="#guides">Guides</a></li>
+      </ul>
+      <a href="#comparatif" class="nav-cta">Comparer</a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#selection">Sélection</a></li>
+      <li><a href="#comparatif">Comparatif</a></li>
+      <li><a href="#duel">Duel</a></li>
+      <li><a href="#guides">Guides</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Sélection 2026 mise à jour
+      </div>
+      <h1 class="hero-title">
+        Trouvez votre vélo<br />
+        <span class="gradient-text">électrique idéal</span>
+      </h1>
+      <p class="hero-sub">
+        Tests rigoureux, comparatifs honnêtes, guides d'achat clairs.<br />
+        On roule pour vous depuis 2020.
+      </p>
+      <div class="hero-actions">
+        <a href="#selection" class="btn btn-primary">
+          Voir la sélection
+          <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </a>
+        <a href="#comparatif" class="btn btn-ghost">Comparatif complet</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">47</span>
+          <span class="stat-label">vélos testés</span>
         </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="hero-btns">
-                    <a href="#meilleurs" class="btn-primary">Comparer les Modèles</a>
-                    <a href="#comparatifs" class="btn-outline">Accéder aux Tests</a>
-                </div>
-                <p class="sr-only">Comparateur Vélo Électrique Premium : Analyses Techniques, Tests Réels, Votre Guide Expert.</p>
-            </div>
-        </section>
-
-        <section id="meilleurs" class="top-picks">
-            <div class="container">
-                <h2 class="section-title">Notre Sélection "Top Picks" 2026</h2>
-                <div class="picks-grid">
-                    <div class="card">
-                        <div class="card-tag">Meilleur Urbain</div>
-                        <div class="card-img">
-                            <img src="https://placehold.co/600x400/2C3E50/FFFFFF?text=VanMoof+S5" alt="VanMoof S5">
-                        </div>
-                        <div class="card-content">
-                            <h3>VanMoof S5</h3>
-                            <p>Le futur du cyclisme urbain avec son moteur ultra-silencieux et son système de sécurité signature.</p>
-                            <div class="expert-opinion">"L'expérience la plus fluide en ville, mais le SAV reste un point de vigilance."</div>
-                            <a href="#" class="btn-primary">Vérifier le prix chez Alltricks</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-tag">Meilleur VTT-E</div>
-                        <div class="card-img">
-                            <img src="https://placehold.co/600x400/2C3E50/FFFFFF?text=Specialized+Turbo+Levo" alt="Specialized Turbo Levo">
-                        </div>
-                        <div class="card-content">
-                            <h3>Specialized Turbo Levo</h3>
-                            <p>Une puissance inégalée pour dompter les sentiers les plus techniques avec agilité.</p>
-                            <div class="expert-opinion">"Le roi incontesté de la montagne. Cher, mais les performances sont au rendez-vous."</div>
-                            <a href="#" class="btn-primary">Voir l'offre sur Kelvélo</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-tag">Meilleur Rapport Qualité/Prix</div>
-                        <div class="card-img">
-                            <img src="https://placehold.co/600x400/2C3E50/FFFFFF?text=Decathlon+Rockrider" alt="Rockrider E-ST 900">
-                        </div>
-                        <div class="card-content">
-                            <h3>Rockrider E-ST 900</h3>
-                            <p>Le choix rationnel pour ceux qui veulent de la performance sans se ruiner.</p>
-                            <div class="expert-opinion">"Un moteur coupleux et une autonomie solide pour un prix défiant toute concurrence."</div>
-                            <a href="#" class="btn-primary">Vérifier chez Decathlon</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="comparatifs" class="comparison">
-            <div class="container">
-                <h2 class="section-title">Comparatif VAE Haute Performance</h2>
-                <div class="table-wrapper">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Modèle</th>
-                                <th>Autonomie</th>
-                                <th>Poids</th>
-                                <th>Moteur</th>
-                                <th>Prix</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>VanMoof S5</strong></td>
-                                <td>150 km</td>
-                                <td>23 kg</td>
-                                <td>250W (Gen 5)</td>
-                                <td>3 498 €</td>
-                                <td><a href="#" class="btn-small">Voir l'offre</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Cowboy 4</strong></td>
-                                <td>70 km</td>
-                                <td>18.9 kg</td>
-                                <td>45 Nm</td>
-                                <td>2 990 €</td>
-                                <td><a href="#" class="btn-small">Voir l'offre</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Specialized Turbo Levo</strong></td>
-                                <td>Up to 5h</td>
-                                <td>22 kg</td>
-                                <td>90 Nm</td>
-                                <td>5 800 €</td>
-                                <td><a href="#" class="btn-small">Voir l'offre</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section class="duel-section">
-            <div class="container">
-                <h2 class="section-title">Le Duel : VanMoof S5 vs Cowboy 4</h2>
-                <div class="duel-container">
-                    <div class="duel-item">
-                        <h3>VanMoof S5</h3>
-                        <p class="duel-highlight">Le roi du confort</p>
-                        <ul>
-                            <li>Vitesse automatique (3 vitesses)</li>
-                            <li>Boutons Turbo Boost</li>
-                            <li>Design iconique</li>
-                        </ul>
-                    </div>
-                    <div class="vs">VS</div>
-                    <div class="duel-item">
-                        <h3>Cowboy 4</h3>
-                        <p class="duel-highlight">Le génie du logiciel</p>
-                        <ul>
-                            <li>Connectivité smartphone fluide</li>
-                            <li>Batterie amovible pratique</li>
-                            <li>Réactivité moteur instantanée</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="duel-verdict">
-                    <h4>Verdict de VeloElite</h4>
-                    <p>Pour **Paris**, le **Cowboy 4** gagne grâce à sa batterie amovible (indispensable en appartement). Pour les longs trajets périurbains, le confort du **S5** reste imbattable.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="guides" class="blog">
-            <div class="container">
-                <h2 class="section-title">Guides & Conseils d'Experts</h2>
-                <div class="blog-grid">
-                    <div class="blog-card">
-                        <h4>Comment choisir sa batterie ?</h4>
-                        <p>Wh, Ah, Li-ion... On vous explique tout pour ne jamais tomber en panne.</p>
-                        <a href="#">Lire la suite →</a>
-                    </div>
-                    <div class="blog-card">
-                        <h4>Subventions VAE 2026</h4>
-                        <p>Jusqu'à 2000€ d'aides pour l'achat d'un vélo électrique en France.</p>
-                        <a href="#">Lire la suite →</a>
-                    </div>
-                    <div class="blog-card">
-                        <h4>Top 5 Antivols haute sécurité</h4>
-                        <p>Protégez votre investissement avec les meilleurs modèles du marché.</p>
-                        <a href="#">Lire la suite →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="trust-section">
-            <div class="container">
-                <div class="trust-badge">
-                    <h3>Pourquoi nous faire confiance ?</h3>
-                    <p>Nous analysons rigoureusement les fiches techniques, les retours clients et effectuons des tests en conditions réelles. Notre indépendance est le gage de votre satisfaction.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Velo<span>Elite</span></div>
-                <div class="footer-links">
-                    <a href="#">Mentions Légales</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Politique de Confidentialité</a>
-                </div>
-            </div>
-            <p class="affiliate-disclosure">Divulgation d'affiliation : En tant que partenaire, nous réalisons un bénéfice sur les achats remplissant les conditions requises. Cela ne change pas le prix pour vous et nous permet de rester indépendants.</p>
-            <p class="copyright">&copy; 2026 VeloElite. Tous droits réservés.</p>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">12k</span>
+          <span class="stat-label">km parcourus</span>
         </div>
-    </footer>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">4.9</span>
+          <span class="stat-label">note lecteurs</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
 
-    <script src="scripts.js"></script>
+  <!-- SELECTION -->
+  <section class="section" id="selection">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Notre sélection</span>
+        <h2>Les meilleurs de 2026</h2>
+        <p>Testés en conditions réelles sur routes parisiennes, pistes de VTT et trajets quotidiens.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="bike-card reveal" data-delay="0">
+          <div class="card-badge coup-coeur">★ Coup de cœur</div>
+          <div class="card-image">
+            <img src="https://placehold.co/480x280/0f172a/4ade80?text=VanMoof+S5" alt="VanMoof S5" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-cat urban">Urbain</span>
+              <span class="card-price">3 498 €</span>
+            </div>
+            <h3>VanMoof S5</h3>
+            <p>La référence urbaine. Transmission automatique, antivol intégré, design iconique. L'expérience de conduite la plus fluide du marché.</p>
+            <div class="card-specs">
+              <div class="spec">
+                <span class="spec-icon">🔋</span>
+                <div>
+                  <span class="spec-val">150 km</span>
+                  <span class="spec-key">Autonomie</span>
+                </div>
+              </div>
+              <div class="spec">
+                <span class="spec-icon">⚡</span>
+                <div>
+                  <span class="spec-val">250 W</span>
+                  <span class="spec-key">Moteur</span>
+                </div>
+              </div>
+              <div class="spec">
+                <span class="spec-icon">⚖️</span>
+                <div>
+                  <span class="spec-val">23 kg</span>
+                  <span class="spec-key">Poids</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-score">
+              <div class="score-bar">
+                <div class="score-fill" style="--score: 92%"></div>
+              </div>
+              <span class="score-num">92/100</span>
+            </div>
+            <div class="card-verdict">
+              <strong>Notre avis :</strong> La conduite la plus silencieuse et intuitive. Idéal pour Paris, mais le SAV reste à améliorer.
+            </div>
+          </div>
+        </div>
+
+        <div class="bike-card reveal" data-delay="100">
+          <div class="card-badge vtt">VTT Premium</div>
+          <div class="card-image">
+            <img src="https://placehold.co/480x280/0f172a/818cf8?text=Specialized+Turbo+Levo" alt="Specialized Turbo Levo" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-cat trail">Tout-terrain</span>
+              <span class="card-price">5 800 €</span>
+            </div>
+            <h3>Specialized Turbo Levo</h3>
+            <p>Le roi des sentiers. Puissance brute, géométrie parfaite et assistance intelligente qui s'adapte à chaque virage technique.</p>
+            <div class="card-specs">
+              <div class="spec">
+                <span class="spec-icon">🔋</span>
+                <div>
+                  <span class="spec-val">5 h</span>
+                  <span class="spec-key">Autonomie</span>
+                </div>
+              </div>
+              <div class="spec">
+                <span class="spec-icon">⚡</span>
+                <div>
+                  <span class="spec-val">90 Nm</span>
+                  <span class="spec-key">Couple</span>
+                </div>
+              </div>
+              <div class="spec">
+                <span class="spec-icon">⚖️</span>
+                <div>
+                  <span class="spec-val">22 kg</span>
+                  <span class="spec-key">Poids</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-score">
+              <div class="score-bar">
+                <div class="score-fill" style="--score: 95%"></div>
+              </div>
+              <span class="score-num">95/100</span>
+            </div>
+            <div class="card-verdict">
+              <strong>Notre avis :</strong> Cher, mais la performance est à la hauteur. Incontestable sur les sentiers techniques.
+            </div>
+          </div>
+        </div>
+
+        <div class="bike-card reveal" data-delay="200">
+          <div class="card-badge budget">Meilleur prix</div>
+          <div class="card-image">
+            <img src="https://placehold.co/480x280/0f172a/fb923c?text=Rockrider+E-ST+900" alt="Rockrider E-ST 900" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-cat poly">Polyvalent</span>
+              <span class="card-price">1 999 €</span>
+            </div>
+            <h3>Rockrider E-ST 900</h3>
+            <p>La surprise de ce comparatif. Performances solides, autonomie honnête, finitions qui n'ont rien à envier aux modèles deux fois plus chers.</p>
+            <div class="card-specs">
+              <div class="spec">
+                <span class="spec-icon">🔋</span>
+                <div>
+                  <span class="spec-val">80 km</span>
+                  <span class="spec-key">Autonomie</span>
+                </div>
+              </div>
+              <div class="spec">
+                <span class="spec-icon">⚡</span>
+                <div>
+                  <span class="spec-val">75 Nm</span>
+                  <span class="spec-key">Couple</span>
+                </div>
+              </div>
+              <div class="spec">
+                <span class="spec-icon">⚖️</span>
+                <div>
+                  <span class="spec-val">24 kg</span>
+                  <span class="spec-key">Poids</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-score">
+              <div class="score-bar">
+                <div class="score-fill" style="--score: 87%"></div>
+              </div>
+              <span class="score-num">87/100</span>
+            </div>
+            <div class="card-verdict">
+              <strong>Notre avis :</strong> Rapport qualité/prix imbattable. Notre recommandation pour débuter en VAE.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIF -->
+  <section class="section section-dark" id="comparatif">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Comparatif</span>
+        <h2>Face à face technique</h2>
+        <p>Tous les chiffres qui comptent, côte à côte.</p>
+      </div>
+
+      <div class="table-wrapper reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Critère</th>
+              <th>
+                <div class="th-bike">
+                  <span class="th-name">VanMoof S5</span>
+                  <span class="th-price">3 498 €</span>
+                </div>
+              </th>
+              <th>
+                <div class="th-bike th-bike-featured">
+                  <span class="th-label">Best pick</span>
+                  <span class="th-name">Cowboy 4</span>
+                  <span class="th-price">2 990 €</span>
+                </div>
+              </th>
+              <th>
+                <div class="th-bike">
+                  <span class="th-name">Specialized Levo</span>
+                  <span class="th-price">5 800 €</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-label">Autonomie</td>
+              <td>150 km</td>
+              <td class="td-featured">70 km</td>
+              <td>~5 h</td>
+            </tr>
+            <tr>
+              <td class="td-label">Poids</td>
+              <td>23 kg</td>
+              <td class="td-featured">18,9 kg <span class="td-check">✓</span></td>
+              <td>22 kg</td>
+            </tr>
+            <tr>
+              <td class="td-label">Moteur</td>
+              <td>250 W Gen 5</td>
+              <td class="td-featured">45 Nm</td>
+              <td>90 Nm <span class="td-check">✓</span></td>
+            </tr>
+            <tr>
+              <td class="td-label">Batterie amovible</td>
+              <td>Non</td>
+              <td class="td-featured">Oui <span class="td-check">✓</span></td>
+              <td>Non</td>
+            </tr>
+            <tr>
+              <td class="td-label">Connectivité</td>
+              <td>App dédiée</td>
+              <td class="td-featured">App premium <span class="td-check">✓</span></td>
+              <td>Mission Control</td>
+            </tr>
+            <tr>
+              <td class="td-label">Garantie</td>
+              <td>2 ans</td>
+              <td class="td-featured">2 ans</td>
+              <td>2 ans</td>
+            </tr>
+            <tr>
+              <td class="td-label">Note VeloElite</td>
+              <td><span class="score-pill">92/100</span></td>
+              <td class="td-featured"><span class="score-pill score-best">94/100</span></td>
+              <td><span class="score-pill score-top">95/100</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUEL -->
+  <section class="section" id="duel">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Le Grand Duel</span>
+        <h2>VanMoof S5 <span class="vs-text">VS</span> Cowboy 4</h2>
+        <p>Pour les citadins, voici le match qui compte vraiment.</p>
+      </div>
+
+      <div class="duel-wrapper reveal">
+        <div class="duel-card">
+          <div class="duel-img">
+            <img src="https://placehold.co/400x220/0f172a/4ade80?text=VanMoof+S5" alt="VanMoof S5" />
+          </div>
+          <h3>VanMoof S5</h3>
+          <p class="duel-sub">Le roi du confort</p>
+          <ul class="duel-pros">
+            <li><span class="pro">✓</span> Transmission automatique 3 vitesses</li>
+            <li><span class="pro">✓</span> Boost turbo à la demande</li>
+            <li><span class="pro">✓</span> Design iconique et intemporel</li>
+            <li><span class="pro">✓</span> Autonomie 150 km</li>
+          </ul>
+          <ul class="duel-cons">
+            <li><span class="con">✗</span> Batterie non amovible</li>
+            <li><span class="con">✗</span> SAV en amélioration</li>
+          </ul>
+        </div>
+
+        <div class="duel-vs">
+          <div class="vs-circle">VS</div>
+        </div>
+
+        <div class="duel-card duel-winner">
+          <div class="winner-badge">🏆 Gagnant Paris</div>
+          <div class="duel-img">
+            <img src="https://placehold.co/400x220/0f172a/818cf8?text=Cowboy+4" alt="Cowboy 4" />
+          </div>
+          <h3>Cowboy 4</h3>
+          <p class="duel-sub">Le génie connecté</p>
+          <ul class="duel-pros">
+            <li><span class="pro">✓</span> Batterie amovible (pratique en appart)</li>
+            <li><span class="pro">✓</span> App parmi les meilleures du marché</li>
+            <li><span class="pro">✓</span> Réponse moteur instantanée</li>
+            <li><span class="pro">✓</span> Le plus léger : 18,9 kg</li>
+          </ul>
+          <ul class="duel-cons">
+            <li><span class="con">✗</span> Autonomie plus courte (70 km)</li>
+            <li><span class="con">✗</span> Pas de transmission automatique</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="duel-verdict reveal">
+        <span class="verdict-icon">⚖️</span>
+        <p><strong>Notre verdict :</strong> Pour Paris et la vie en appartement, le Cowboy 4 remporte le match grâce à sa batterie amovible — un critère décisif. Pour les banlieusards ou les longues distances, le confort du VanMoof S5 est imbattable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDES -->
+  <section class="section section-dark" id="guides">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Guides d'achat</span>
+        <h2>Tout savoir avant d'acheter</h2>
+        <p>Des guides rédigés par des passionnés, pour des passionnés.</p>
+      </div>
+
+      <div class="guides-grid">
+
+        <article class="guide-card reveal" data-delay="0">
+          <div class="guide-icon">🔋</div>
+          <span class="guide-tag">Technique</span>
+          <h3>Bien choisir sa batterie</h3>
+          <p>Wh, Ah, Li-ion… On décrypte tous les indicateurs pour que vous choisissiez la bonne autonomie selon votre usage.</p>
+          <a href="#" class="guide-link">Lire le guide <span>→</span></a>
+        </article>
+
+        <article class="guide-card reveal" data-delay="100">
+          <div class="guide-icon">💶</div>
+          <span class="guide-tag">Finance</span>
+          <h3>Aides et subventions 2026</h3>
+          <p>Bonus écologique, aide locale, prime à la conversion… Jusqu'à 2 000 € de remises disponibles. Ne les ratez pas.</p>
+          <a href="#" class="guide-link">Lire le guide <span>→</span></a>
+        </article>
+
+        <article class="guide-card reveal" data-delay="200">
+          <div class="guide-icon">🔐</div>
+          <span class="guide-tag">Sécurité</span>
+          <h3>Top 5 antivols haute sécurité</h3>
+          <p>Un VAE à 3 000€ mérite un antivol sérieux. Notre sélection des meilleures protections testées sur le terrain.</p>
+          <a href="#" class="guide-link">Lire le guide <span>→</span></a>
+        </article>
+
+        <article class="guide-card reveal" data-delay="300">
+          <div class="guide-icon">🛠️</div>
+          <span class="guide-tag">Entretien</span>
+          <h3>Entretien : les bons réflexes</h3>
+          <p>Chaine, freins, batterie, pression des pneus… Le check-up mensuel qui prolonge la vie de votre vélo.</p>
+          <a href="#" class="guide-link">Lire le guide <span>→</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <span class="trust-icon">🧪</span>
+          <h4>Tests en conditions réelles</h4>
+          <p>Chaque vélo est testé pendant au moins 2 semaines sur nos parcours habituels.</p>
+        </div>
+        <div class="trust-item reveal" data-delay="100">
+          <span class="trust-icon">🎙️</span>
+          <h4>Avis lecteurs vérifiés</h4>
+          <p>Les retours de notre communauté enrichissent chaque fiche technique.</p>
+        </div>
+        <div class="trust-item reveal" data-delay="200">
+          <span class="trust-icon">🔍</span>
+          <h4>Indépendance éditoriale</h4>
+          <p>Aucune marque ne peut influencer nos notes. Les commissions ne changent pas nos avis.</p>
+        </div>
+        <div class="trust-item reveal" data-delay="300">
+          <span class="trust-icon">🔄</span>
+          <h4>Mis à jour régulièrement</h4>
+          <p>Nos tests sont revus à chaque mise à jour firmware ou changement de gamme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">⚡</span>
+            <span>Velo<strong>Elite</strong></span>
+          </a>
+          <p>Le guide de référence du vélo électrique premium en France depuis 2020.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul>
+              <li><a href="#selection">Sélection</a></li>
+              <li><a href="#comparatif">Comparatif</a></li>
+              <li><a href="#duel">Duel</a></li>
+              <li><a href="#guides">Guides</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Légal</h5>
+            <ul>
+              <li><a href="#">Mentions légales</a></li>
+              <li><a href="#">Confidentialité</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="affiliate-note">
+          En tant que partenaire affilié, nous percevons une commission sur les achats qualifiés. Cela ne change pas le prix pour vous et nous permet de rester indépendants.
+        </p>
+        <p class="copyright">© 2026 VeloElite — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
