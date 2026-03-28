@@ -335,6 +335,49 @@ h3 { font-size: 1.3rem; }
 }
 
 /* =============================================
+   FILTRES SÉLECTION
+   ============================================= */
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 9px 20px;
+  background: var(--bg3);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.filter-btn.active {
+  background: var(--green);
+  color: #0a0f1a;
+  border-color: var(--green);
+  font-weight: 700;
+}
+
+.bike-card {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.bike-card.hidden {
+  display: none;
+}
+
+/* =============================================
    HERO
    ============================================= */
 

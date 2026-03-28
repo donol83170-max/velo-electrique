@@ -10,6 +10,14 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="article.css" />
   <link rel="canonical" href="https://veloelite.fr/contact.html" />
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <style>
     /* ── Contact Page Styles ── */
     .contact-grid {
@@ -189,6 +197,10 @@
       text-align: justify;
     }
   </style>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#4ade80" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
 <body>
 
@@ -259,7 +271,9 @@
         <!-- Form -->
         <div class="contact-form-wrap">
           <h3>Envoyez-nous un message</h3>
-          <form id="contactForm" novalidate>
+          <form id="contactForm" action="https://formspree.io/f/XXXXXXXX" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Nouveau message — VeloElite" />
+            <input type="hidden" name="_next" value="https://veloelite.fr/contact.html?merci=1" />
             <div class="form-row">
               <div class="form-group">
                 <label for="prenom">Prénom</label>

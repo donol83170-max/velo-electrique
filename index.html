@@ -20,6 +20,18 @@
   <meta name="twitter:title" content="VeloElite — Les meilleurs vélos électriques 2026" />
   <meta name="twitter:description" content="Comparatifs, tests et guides d'achat pour vélos électriques. Trouvez le VAE parfait en 2026." />
   <link rel="canonical" href="https://veloelite.fr/" />
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#4ade80" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
 <body>
 
@@ -122,9 +134,16 @@
         <p>Testés en conditions réelles sur routes parisiennes, pistes de VTT et trajets quotidiens.</p>
       </div>
 
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="urban">🏙️ Urbain</button>
+        <button class="filter-btn" data-filter="trail">🏔️ Tout-terrain</button>
+        <button class="filter-btn" data-filter="poly">🔄 Polyvalent</button>
+      </div>
+
       <div class="cards-grid">
 
-        <div class="bike-card reveal" data-delay="0">
+        <div class="bike-card reveal" data-delay="0" data-cat="urban">
           <div class="card-badge coup-coeur">★ Coup de cœur</div>
           <div class="card-image">
             <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&q=80" alt="VanMoof S5" loading="lazy" />
@@ -174,7 +193,7 @@
           </div>
         </div>
 
-        <div class="bike-card reveal" data-delay="100">
+        <div class="bike-card reveal" data-delay="100" data-cat="trail">
           <div class="card-badge vtt">VTT Premium</div>
           <div class="card-image">
             <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=480&q=80" alt="Specialized Turbo Levo" loading="lazy" />
@@ -224,7 +243,7 @@
           </div>
         </div>
 
-        <div class="bike-card reveal" data-delay="200">
+        <div class="bike-card reveal" data-delay="200" data-cat="poly">
           <div class="card-badge budget">Meilleur prix</div>
           <div class="card-image">
             <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=480&q=80" alt="Decathlon Elops" loading="lazy" />

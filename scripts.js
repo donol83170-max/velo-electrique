@@ -135,3 +135,54 @@ if (searchInput && searchResults) {
     }
   });
 }
+
+// Filtres sélection
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.bike-card').forEach(card => {
+      if (filter === 'all' || card.dataset.cat === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// Système de notation étoiles
+const stars = document.querySelectorAll('.star');
+const ratingFeedback = document.getElementById('ratingFeedback');
+const messages = ['', 'Merci pour votre retour !', 'Merci !', 'Super, merci !', 'Excellent, merci !', '⭐ Parfait, merci beaucoup !'];
+
+if (stars.length) {
+  stars.forEach(star => {
+    star.addEventListener('mouseover', function() {
+      const val = parseInt(this.dataset.val);
+      stars.forEach(s => {
+        s.classList.toggle('hovered', parseInt(s.dataset.val) <= val);
+      });
+    });
+    star.addEventListener('mouseout', function() {
+      stars.forEach(s => s.classList.remove('hovered'));
+    });
+    star.addEventListener('click', function() {
+      const val = parseInt(this.dataset.val);
+      stars.forEach(s => {
+        s.classList.toggle('selected', parseInt(s.dataset.val) <= val);
+      });
+      if (ratingFeedback) ratingFeedback.textContent = messages[val];
+      stars.forEach(s => { s.style.pointerEvents = 'none'; });
+    });
+  });
+}
+
+// Service Worker PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
