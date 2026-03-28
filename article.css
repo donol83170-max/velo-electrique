@@ -294,6 +294,69 @@
   letter-spacing: 0.04em;
 }
 
+/* =============================================
+   BUY BOX AFFILIATION
+   ============================================= */
+
+.buy-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(74,222,128,0.06) 0%, rgba(129,140,248,0.06) 100%);
+  border: 1.5px solid rgba(74,222,128,0.22);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 28px 0;
+  flex-wrap: wrap;
+}
+
+.buy-box-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.buy-box-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.buy-box-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.buy-box-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.buy-box-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: var(--green);
+  color: #0a0f1a;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.22s;
+  box-shadow: 0 0 20px rgba(74,222,128,0.18);
+}
+
+.buy-box-btn:hover {
+  background: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(74,222,128,0.35);
+}
+
 /* Footer nav */
 .article-footer-links {
   display: flex;

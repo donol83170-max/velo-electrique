@@ -299,6 +299,42 @@ h3 { font-size: 1.3rem; }
 }
 
 /* =============================================
+   BOUTON AFFILIATION "VOIR LE PRIX"
+   ============================================= */
+
+.btn-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  margin-top: 16px;
+  background: var(--green);
+  color: #0a0f1a;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: all 0.22s;
+  box-shadow: 0 0 20px rgba(74,222,128,0.18);
+  cursor: pointer;
+}
+
+.btn-buy:hover {
+  background: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(74,222,128,0.35);
+}
+
+.btn-buy .btn-buy-store {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.75;
+  margin-left: 4px;
+}
+
+/* =============================================
    HERO
    ============================================= */
 
