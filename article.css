@@ -347,3 +347,21 @@
 
   .next-article { margin-left: 0; }
 }
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.breadcrumb a {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.breadcrumb a:hover { color: var(--green); }
+.breadcrumb-sep { color: var(--border); font-size: 1rem; }
+.breadcrumb-current { color: var(--text); font-weight: 500; }

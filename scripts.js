@@ -57,3 +57,81 @@ document.querySelectorAll('.score-fill').forEach(el => {
   el.style.setProperty('--score', score);
   scoreObserver.observe(el);
 });
+
+// Newsletter form
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletterEmail').value;
+    if (!email) return;
+    const note = document.getElementById('newsletterNote');
+    note.textContent = '🎉 Merci ! Vous êtes bien inscrit(e).';
+    note.style.color = 'var(--green)';
+    this.style.opacity = '0.5';
+    this.style.pointerEvents = 'none';
+  });
+}
+
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('veloelite-theme', theme);
+  if (themeIcon) themeIcon.textContent = theme === 'light' ? '☀️' : '🌙';
+}
+
+const savedTheme = localStorage.getItem('veloelite-theme') || 'dark';
+applyTheme(savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'light' ? 'dark' : 'light');
+  });
+}
+
+// Search
+const searchInput = document.getElementById('navSearchInput');
+const searchResults = document.getElementById('searchResults');
+
+const searchData = [
+  { icon: '📖', title: 'Choisir son vélo électrique en 2026', url: 'article1.html' },
+  { icon: '🏆', title: 'Top 3 VAE urbains à moins de 2 500 €', url: 'article2.html' },
+  { icon: '🔋', title: 'Batteries et moteurs Bosch / Shimano', url: 'article3.html' },
+  { icon: '💶', title: 'Payer son vélo 1 000 € moins cher', url: 'article4.html' },
+  { icon: '🚴', title: 'Avis Decathlon Elops LD 920 E', url: 'article5.html' },
+  { icon: '⚡', title: 'VanMoof S5 — Sélection', url: 'index.html#selection' },
+  { icon: '🏔️', title: 'Specialized Turbo Levo — Sélection', url: 'index.html#selection' },
+  { icon: '📊', title: 'Comparatif complet', url: 'index.html#comparatif' },
+  { icon: '⚖️', title: 'Duel VanMoof vs Cowboy', url: 'index.html#duel' },
+  { icon: '📬', title: 'Contact', url: 'contact.html' },
+  { icon: 'ℹ️', title: 'À propos de VeloElite', url: 'a-propos.html' },
+];
+
+if (searchInput && searchResults) {
+  searchInput.addEventListener('input', function() {
+    const q = this.value.trim().toLowerCase();
+    if (!q) { searchResults.classList.remove('active'); return; }
+    const matches = searchData.filter(item => item.title.toLowerCase().includes(q));
+    if (matches.length === 0) {
+      searchResults.innerHTML = '<p class="search-empty">Aucun résultat trouvé.</p>';
+    } else {
+      searchResults.innerHTML = matches.map(item =>
+        `<a class="search-result-item" href="${item.url}">
+          <span class="search-result-icon">${item.icon}</span>
+          ${item.title}
+        </a>`
+      ).join('');
+    }
+    searchResults.classList.add('active');
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('navSearch').contains(e.target)) {
+      searchResults.classList.remove('active');
+    }
+  });
+}

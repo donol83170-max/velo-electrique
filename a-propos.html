@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — VeloElite</title>
+  <meta name="description" content="Qui sommes-nous ? L'histoire de VeloElite, notre méthode de test et notre engagement pour l'indépendance éditoriale." />
+  <meta property="og:title" content="À propos de VeloElite" />
+  <meta property="og:description" content="Qui sommes-nous ? L'histoire de VeloElite, notre méthode de test et notre engagement pour l'indépendance éditoriale." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article.css" />
+  <style>
+    .about-team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .team-card {
+      background: var(--surface, #1e293b);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: border-color 0.25s;
+    }
+    .team-card:hover { border-color: var(--green); }
+    .team-avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--purple));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 16px;
+    }
+    .team-card h4 { font-size: 1rem; font-weight: 700; color: var(--text-bright, #f8fafc); margin-bottom: 4px; }
+    .team-card p { font-size: 0.85rem; color: var(--muted); }
+    .method-steps { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+    .method-step {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--surface, #1e293b);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .step-num {
+      min-width: 36px; height: 36px;
+      background: var(--green); color: #000;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .method-step h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-bright, #f8fafc); margin-bottom: 4px; }
+    .method-step p { font-size: 0.875rem; color: var(--muted); text-align: justify; line-height: 1.6; }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0;
+      text-align: center;
+    }
+    .stat-box {
+      background: var(--surface, #1e293b);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 16px;
+    }
+    .stat-box .num { font-size: 2rem; font-weight: 800; color: var(--green); font-family: 'Space Grotesk', sans-serif; }
+    .stat-box .lbl { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+    @media (max-width: 500px) { .stat-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span>Velo<strong>Elite</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#selection">Sélection</a></li>
+        <li><a href="index.html#comparatif">Comparatif</a></li>
+        <li><a href="index.html#duel">Duel</a></li>
+        <li><a href="index.html#guides">Guides</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+      </ul>
+      <a href="index.html#comparatif" class="nav-cta">Comparer</a>
+    </div>
+  </nav>
+
+  <main class="article-main">
+    <div class="article-container" style="max-width: 860px;">
+
+      <nav class="breadcrumb" aria-label="Fil d'ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">À propos</span>
+      </nav>
+
+      <header class="article-header">
+        <span class="article-tag">Notre histoire</span>
+        <h1>VeloElite, c'est qui ?</h1>
+        <p class="article-intro">Depuis 2020, on teste des vélos électriques pour une raison simple : on n'a pas trouvé ailleurs le site qu'on voulait consulter avant d'acheter. Alors on l'a créé.</p>
+      </header>
+
+      <div class="article-body">
+
+        <h2>Notre histoire</h2>
+        <p>VeloElite est né d'une frustration. En 2020, deux passionnés de mobilité urbaine cherchent à acheter leur premier VAE. Ils se retrouvent noyés sous des fiches produits incompréhensibles, des "tests" rédigés sans jamais avoir touché le vélo, et des comparatifs orientés par la commission la plus élevée.</p>
+        <p>La décision est simple : créer le média qu'ils auraient voulu consulter. Pas de langue de bois, pas d'article sponsorisé, des tests réels sur des parcours réels. Depuis, VeloElite a testé plus de 47 modèles, parcouru 12 000 km et rassemblé une communauté de plus de 30 000 lecteurs mensuels.</p>
+
+        <div class="stat-grid">
+          <div class="stat-box"><div class="num">47</div><div class="lbl">Vélos testés</div></div>
+          <div class="stat-box"><div class="num">12k</div><div class="lbl">Km parcourus</div></div>
+          <div class="stat-box"><div class="num">30k</div><div class="lbl">Lecteurs / mois</div></div>
+        </div>
+
+        <h2>Notre équipe</h2>
+        <p>On est une petite équipe passionnée. Pas de journalistes reconvertis, pas de rédacteurs qui écrivent sur tout et n'importe quoi. Des cyclistes qui connaissent la différence entre un capteur de couple et un capteur de rotation, et qui peuvent vous expliquer pourquoi ça change tout.</p>
+
+        <div class="about-team">
+          <div class="team-card">
+            <div class="team-avatar">🚴</div>
+            <h4>Thomas</h4>
+            <p>Fondateur & testeur principal. Ex-ingénieur, passionné de mécanique vélo depuis 15 ans.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">🔋</div>
+            <h4>Léa</h4>
+            <p>Spécialiste batteries & autonomie. Elle connaît chaque cellule lithium du marché par cœur.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">📊</div>
+            <h4>Marc</h4>
+            <p>Analyste comparatifs. Il construit nos grilles de notation et vérifie chaque chiffre publié.</p>
+          </div>
+        </div>
+
+        <h2>Notre méthode de test</h2>
+        <p>Chaque vélo est testé pendant <strong>minimum deux semaines</strong> sur un parcours standardisé de 15 km combinant 60 % route et 40 % piste cyclable, avec deux côtes à 6 % de dénivelé. On mesure l'autonomie réelle, pas celle annoncée par le constructeur.</p>
+
+        <div class="method-steps">
+          <div class="method-step">
+            <div class="step-num">1</div>
+            <div>
+              <h4>Prise en main (J1–J3)</h4>
+              <p>Première impression, réglages, confort immédiat. On note ce qu'un acheteur ressent le premier jour.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">2</div>
+            <div>
+              <h4>Tests de performance (J4–J10)</h4>
+              <p>Mesure de l'autonomie réelle sur 3 cycles complets, test des modes d'assistance, comportement en côte et sous la pluie.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">3</div>
+            <div>
+              <h4>Usage quotidien (J11–J14)</h4>
+              <p>Le vélo devient notre outil de transport quotidien. On note ce qui agace ou séduit sur la durée.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">4</div>
+            <div>
+              <h4>Notation & publication</h4>
+              <p>5 critères pondérés : confort (25%), moteur (20%), autonomie réelle (20%), rapport qualité/prix (20%), réparabilité (15%). Chaque note est justifiée.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Notre engagement</h2>
+        <div class="article-callout">
+          <strong>Indépendance totale :</strong> VeloElite ne publie aucun article sponsorisé. Notre seul modèle économique est l'affiliation — une commission versée par les revendeurs lorsque vous achetez via nos liens. Cette commission ne change jamais notre verdict : un mauvais vélo reste un mauvais vélo, même si son fabricant nous propose le double de commission.
+        </div>
+        <p>Si vous constatez une erreur dans l'un de nos articles, <a href="contact.html" style="color:var(--green);">signalez-la nous</a>. On corrige sous 24h, et on le mentionne en bas d'article pour la transparence.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">⚡</span>
+            <span>Velo<strong>Elite</strong></span>
+          </a>
+          <p>Le guide de référence du vélo électrique premium en France depuis 2020.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul>
+              <li><a href="index.html#selection">Sélection</a></li>
+              <li><a href="index.html#comparatif">Comparatif</a></li>
+              <li><a href="index.html#duel">Duel</a></li>
+              <li><a href="index.html#guides">Guides</a></li>
+              <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Légal</h5>
+            <ul>
+              <li><a href="mentions-legales.html">Mentions légales</a></li>
+              <li><a href="confidentialite.html">Confidentialité</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="affiliate-note">En tant que partenaire affilié, nous percevons une commission sur les achats qualifiés. Cela ne change pas le prix pour vous et nous permet de rester indépendants.</p>
+        <p class="copyright">© 2026 VeloElite — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -8,6 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="VeloElite — Les meilleurs vélos électriques 2026" />
+  <meta property="og:description" content="Comparatifs, tests et guides d'achat pour vélos électriques. Trouvez le VAE parfait en 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://veloelite.fr" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VeloElite — Les meilleurs vélos électriques 2026" />
+  <meta name="twitter:description" content="Comparatifs, tests et guides d'achat pour vélos électriques. Trouvez le VAE parfait en 2026." />
 </head>
 <body>
 
@@ -23,10 +33,19 @@
         <li><a href="#comparatif">Comparatif</a></li>
         <li><a href="#duel">Duel</a></li>
         <li><a href="#guides">Guides</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
       </ul>
       <a href="#comparatif" class="nav-cta">Comparer</a>
       <button class="burger" id="burger" aria-label="Menu">
         <span></span><span></span><span></span>
+      </button>
+      <div class="nav-search" id="navSearch">
+        <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Rechercher un vélo…" aria-label="Recherche" />
+        <span class="nav-search-icon">🔍</span>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Mode clair / sombre">
+        <span class="theme-icon">🌙</span>
       </button>
     </div>
   </nav>
@@ -38,6 +57,7 @@
       <li><a href="#comparatif">Comparatif</a></li>
       <li><a href="#duel">Duel</a></li>
       <li><a href="#guides">Guides</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
     </ul>
   </div>
 
@@ -105,7 +125,7 @@
         <div class="bike-card reveal" data-delay="0">
           <div class="card-badge coup-coeur">★ Coup de cœur</div>
           <div class="card-image">
-            <img src="https://placehold.co/480x280/0f172a/4ade80?text=VanMoof+S5" alt="VanMoof S5" />
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&q=80" alt="VanMoof S5" />
           </div>
           <div class="card-body">
             <div class="card-meta">
@@ -152,7 +172,7 @@
         <div class="bike-card reveal" data-delay="100">
           <div class="card-badge vtt">VTT Premium</div>
           <div class="card-image">
-            <img src="https://placehold.co/480x280/0f172a/818cf8?text=Specialized+Turbo+Levo" alt="Specialized Turbo Levo" />
+            <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=480&q=80" alt="Specialized Turbo Levo" />
           </div>
           <div class="card-body">
             <div class="card-meta">
@@ -199,7 +219,7 @@
         <div class="bike-card reveal" data-delay="200">
           <div class="card-badge budget">Meilleur prix</div>
           <div class="card-image">
-            <img src="https://placehold.co/480x280/0f172a/fb923c?text=Rockrider+E-ST+900" alt="Rockrider E-ST 900" />
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=480&q=80" alt="Decathlon Elops" />
           </div>
           <div class="card-body">
             <div class="card-meta">
@@ -343,7 +363,7 @@
       <div class="duel-wrapper reveal">
         <div class="duel-card">
           <div class="duel-img">
-            <img src="https://placehold.co/400x220/0f172a/4ade80?text=VanMoof+S5" alt="VanMoof S5" />
+            <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=400&q=80" alt="VanMoof S5" />
           </div>
           <h3>VanMoof S5</h3>
           <p class="duel-sub">Le roi du confort</p>
@@ -366,7 +386,7 @@
         <div class="duel-card duel-winner">
           <div class="winner-badge">🏆 Gagnant Paris</div>
           <div class="duel-img">
-            <img src="https://placehold.co/400x220/0f172a/818cf8?text=Cowboy+4" alt="Cowboy 4" />
+            <img src="https://images.unsplash.com/photo-1526401485004-46910ecc8e51?w=400&q=80" alt="Cowboy 4" />
           </div>
           <h3>Cowboy 4</h3>
           <p class="duel-sub">Le génie connecté</p>
@@ -516,6 +536,22 @@
     </div>
   </section>
 
+  <!-- NEWSLETTER -->
+  <section class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter-box reveal">
+        <div class="newsletter-icon">📬</div>
+        <h2>Restez informé des meilleurs VAE</h2>
+        <p>Chaque semaine, nos tests, comparatifs et bons plans directement dans votre boîte mail. Pas de spam, juste du vélo.</p>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <input type="email" placeholder="votre@email.fr" class="newsletter-input" id="newsletterEmail" required />
+          <button type="submit" class="newsletter-btn">S'abonner →</button>
+        </form>
+        <p class="newsletter-note" id="newsletterNote">✅ Gratuit · Désinscription en 1 clic · Pas de spam</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -535,6 +571,7 @@
               <li><a href="#comparatif">Comparatif</a></li>
               <li><a href="#duel">Duel</a></li>
               <li><a href="#guides">Guides</a></li>
+              <li><a href="a-propos.html">À propos</a></li>
             </ul>
           </div>
           <div class="footer-col">
