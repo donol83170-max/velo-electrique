@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — VeloElite</title>
+  <meta name="description" content="Contactez l'équipe VeloElite pour toute question, partenariat ou suggestion." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article.css" />
+  <style>
+    /* ── Contact Page Styles ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* Info cards */
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: border-color 0.25s;
+    }
+    .contact-card:hover { border-color: var(--green); }
+    .contact-card-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(16, 185, 129, 0.08);
+      border-radius: 12px;
+    }
+    .contact-card-body h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+    .contact-card-body p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.5;
+      text-align: left;
+    }
+    .contact-card-body a {
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    /* Form */
+    .contact-form-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+    }
+    .contact-form-wrap h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      color: var(--text-bright);
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+    .form-group select option { background: #1e293b; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+    .form-submit {
+      width: 100%;
+      background: var(--green);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      font-family: inherit;
+      margin-top: 8px;
+    }
+    .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px;
+    }
+    .form-success .success-icon { font-size: 3rem; margin-bottom: 16px; }
+    .form-success h4 { color: var(--green); font-size: 1.2rem; margin-bottom: 8px; }
+    .form-success p { color: var(--muted); font-size: 0.9rem; }
+
+    /* FAQ */
+    .contact-faq { margin-top: 64px; }
+    .contact-faq h2 { margin-bottom: 32px; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 20px 24px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-bright);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--green); }
+    .faq-question .faq-arrow {
+      font-size: 0.75rem;
+      color: var(--muted);
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer p {
+      padding: 0 24px 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span>Velo<strong>Elite</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#selection">Sélection</a></li>
+        <li><a href="index.html#comparatif">Comparatif</a></li>
+        <li><a href="index.html#duel">Duel</a></li>
+        <li><a href="index.html#guides">Guides</a></li>
+      </ul>
+      <a href="index.html#comparatif" class="nav-cta">Comparer</a>
+    </div>
+  </nav>
+
+  <main class="article-main">
+    <div class="article-container" style="max-width: 900px;">
+
+      <div class="article-back">
+        <a href="index.html">← Retour à l'accueil</a>
+      </div>
+
+      <header class="article-header">
+        <span class="article-tag">Contact</span>
+        <h1>Parlons vélo électrique</h1>
+        <p class="article-intro">Une question sur un modèle, une suggestion d'article, un partenariat ou une correction à nous signaler ? Notre équipe répond dans les 48 heures.</p>
+      </header>
+
+      <div class="contact-grid">
+
+        <!-- Info cards -->
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div class="contact-card-body">
+              <h4>Email</h4>
+              <p><a href="mailto:contact@veloelite.fr">contact@veloelite.fr</a><br>Réponse sous 48h ouvrées.</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">🤝</div>
+            <div class="contact-card-body">
+              <h4>Partenariats & Affiliation</h4>
+              <p>Vous êtes une marque ou un distributeur ? Écrivez-nous via le formulaire en sélectionnant "Partenariat".</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">🔧</div>
+            <div class="contact-card-body">
+              <h4>Signaler une erreur</h4>
+              <p>Une fiche technique incorrecte ? Un prix à corriger ? Merci de nous le signaler, on met à jour rapidement.</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">⏱️</div>
+            <div class="contact-card-body">
+              <h4>Délai de réponse</h4>
+              <p>Du lundi au vendredi, 9h–18h. Nous répondons en moyenne en <strong style="color: var(--green);">24 heures</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap">
+          <h3>Envoyez-nous un message</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" placeholder="Jean" required />
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" placeholder="Dupont" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" placeholder="jean@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="sujet">Sujet</label>
+              <select id="sujet">
+                <option value="">Sélectionner un sujet…</option>
+                <option value="question">Question sur un vélo</option>
+                <option value="erreur">Signaler une erreur</option>
+                <option value="partenariat">Partenariat / Affiliation</option>
+                <option value="presse">Demande presse</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" placeholder="Décrivez votre demande…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Envoyer le message →</button>
+            <p class="form-note">En envoyant ce formulaire, vous acceptez notre <a href="confidentialite.html" style="color: var(--green);">politique de confidentialité</a>.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✅</div>
+            <h4>Message envoyé !</h4>
+            <p>Merci pour votre message. Nous reviendrons vers vous dans les 48 heures ouvrées.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ -->
+      <div class="contact-faq article-body">
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Vos avis sont-ils vraiment indépendants ?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Oui, totalement. Nous recevons parfois des vélos en prêt pour les tests, mais les marques n'ont aucun droit de regard sur notre verdict. Nos notes ne sont jamais influencées par les commissions d'affiliation — un vélo moyen restera noté comme tel, même si son fabricant est partenaire.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Puis-je proposer un modèle à tester ?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Absolument. Si vous êtes une marque ou un distributeur et souhaitez nous confier un vélo pour test, contactez-nous via le formulaire en sélectionnant "Partenariat". Nous préciserons notre processus éditorial et les délais de publication.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Je ne trouve pas le modèle que je cherche, que faire ?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Écrivez-nous en précisant le modèle et votre usage. Si plusieurs lecteurs posent la même question, nous priorisons les tests en conséquence. Votre retour nous aide directement à améliorer le contenu du site.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Comment sont calculées vos notes ?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Chaque vélo est évalué sur 5 critères pondérés : confort de conduite (25%), performance moteur (20%), autonomie réelle (20%), rapport qualité/prix (20%) et réparabilité (15%). Les scores sont calculés après au moins deux semaines de test sur un parcours standardisé mixte ville/campagne.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Proposez-vous de la publicité ou des articles sponsorisés ?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Non. VeloElite ne publie pas d'articles sponsorisés ou de publi-rédactionnels. Notre seul modèle de monétisation est l'affiliation (commission sur les achats via nos liens), ce qui nous permet de rester entièrement libres dans notre ligne éditoriale.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">⚡</span>
+            <span>Velo<strong>Elite</strong></span>
+          </a>
+          <p>Le guide de référence du vélo électrique premium en France depuis 2020.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul>
+              <li><a href="index.html#selection">Sélection</a></li>
+              <li><a href="index.html#comparatif">Comparatif</a></li>
+              <li><a href="index.html#duel">Duel</a></li>
+              <li><a href="index.html#guides">Guides</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Légal</h5>
+            <ul>
+              <li><a href="mentions-legales.html">Mentions légales</a></li>
+              <li><a href="confidentialite.html">Confidentialité</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="affiliate-note">En tant que partenaire affilié, nous percevons une commission sur les achats qualifiés. Cela ne change pas le prix pour vous et nous permet de rester indépendants.</p>
+        <p class="copyright">© 2026 VeloElite — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Form submit simulation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      if (!email || !message) {
+        alert('Merci de renseigner votre email et votre message.');
+        return;
+      }
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
